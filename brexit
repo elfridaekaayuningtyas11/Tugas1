@@ -77,7 +77,6 @@ ggplot(brexit, aes(y = opinion, fill = opinion)) +
   theme_minimal()
 ```
 #answer
-library(readr)
 library(ggplot2)
 
 brexit <- read_csv("C:/Users/Lenovo/Documents/pengantar sains data (psd)/brexit.csv")
