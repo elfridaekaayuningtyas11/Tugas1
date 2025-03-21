@@ -1,3 +1,6 @@
+# Tugas1
+tugas 1 psd b
+
 ---
 title: "Brexit"
 date: "`r Sys.Date()`"
@@ -19,7 +22,7 @@ In September 2019, YouGov survey asked 1,639 GB adults the following question:
 The data from the survey are in `data/brexit.csv`.
 
 ```{r message = FALSE}
-brexit <- read_csv("data/brexit.csv")
+brexit <- read_csv("C:/Users/Lenovo/Documents/pengantar sains data (psd)/brexit.csv")
 ```
 
 In the course video we made the following visualisation.
@@ -56,26 +59,6 @@ In this application exercise we tell different stories with the same data.
 Add `scales = "free_x"` as an argument to the `facet_wrap()` function. How does the visualisation change? How is the story this visualisation telling different than the story the original plot tells?
 
 ```{r}
-ggplot(brexit, aes(y = opinion, fill = opinion)) +
-  geom_bar() +
-  facet_wrap(~region,
-    nrow = 1, labeller = label_wrap_gen(width = 12),
-    # ___
-  ) +
-  guides(fill = FALSE) +
-  labs(
-    title = "Was Britain right/wrong to vote to leave EU?",
-    subtitle = "YouGov Survey Results, 2-3 September 2019",
-    caption = "Source: bit.ly/2lCJZVg",
-    x = NULL, y = NULL
-  ) +
-  scale_fill_manual(values = c(
-    "Wrong" = "#ef8a62",
-    "Right" = "#67a9cf",
-    "Don't know" = "gray"
-  )) +
-  theme_minimal()
-```
 #answer
 library(ggplot2)
 
@@ -100,6 +83,7 @@ ggplot(brexit, aes(y = opinion, fill = opinion)) +
     "Don't know" = "gray"
   )) +
   theme_minimal()
+```
 
 
 ### Exercise 2 - Comparing proportions across facets
@@ -129,7 +113,7 @@ ggplot(brexit_prop, aes(region, prop, fill = opinion)) +
   theme_minimal() +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(),
         strip.text = element_text(size = 12, face = "bold"))
-
+```
 
 ### Exercise 3 - Comparing proportions across bars
 
@@ -161,4 +145,6 @@ ggplot(brexit_prop, aes(x = region, y = prop, fill = opinion)) +
   theme(legend.position = "right",  # Pindahkan legenda ke kanan
         legend.title = element_text(face = "bold"),
         axis.text.x = element_text(face = "bold", angle = 45, hjust = 1))
+```
+
 
