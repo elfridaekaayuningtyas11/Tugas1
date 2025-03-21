@@ -113,8 +113,8 @@ ggplot(brexit_prop, aes(region, prop, fill = opinion)) +
   theme_minimal() +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(),
         strip.text = element_text(size = 12, face = "bold"))
+```
 
-```{r}
 ### Exercise 3 - Comparing proportions across bars
 
 Recreate the same visualisation from the previous exercise, this time dodging the bars for opinion proportions for each region, rather than faceting by region and then improve the legend. How is the story this visualisation telling different than the story the previous plot tells?
@@ -145,4 +145,4 @@ ggplot(brexit_prop, aes(x = region, y = prop, fill = opinion)) +
   theme(legend.position = "right",  # Pindahkan legenda ke kanan
         legend.title = element_text(face = "bold"),
         axis.text.x = element_text(face = "bold", angle = 45, hjust = 1))
-
+```
