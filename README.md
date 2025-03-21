@@ -59,26 +59,6 @@ In this application exercise we tell different stories with the same data.
 Add `scales = "free_x"` as an argument to the `facet_wrap()` function. How does the visualisation change? How is the story this visualisation telling different than the story the original plot tells?
 
 ```{r}
-ggplot(brexit, aes(y = opinion, fill = opinion)) +
-  geom_bar() +
-  facet_wrap(~region,
-    nrow = 1, labeller = label_wrap_gen(width = 12),
-    # ___
-  ) +
-  guides(fill = FALSE) +
-  labs(
-    title = "Was Britain right/wrong to vote to leave EU?",
-    subtitle = "YouGov Survey Results, 2-3 September 2019",
-    caption = "Source: bit.ly/2lCJZVg",
-    x = NULL, y = NULL
-  ) +
-  scale_fill_manual(values = c(
-    "Wrong" = "#ef8a62",
-    "Right" = "#67a9cf",
-    "Don't know" = "gray"
-  )) +
-  theme_minimal()
-```
 #answer
 library(ggplot2)
 
@@ -103,6 +83,7 @@ ggplot(brexit, aes(y = opinion, fill = opinion)) +
     "Don't know" = "gray"
   )) +
   theme_minimal()
+```
 
 
 ### Exercise 2 - Comparing proportions across facets
@@ -133,7 +114,7 @@ ggplot(brexit_prop, aes(region, prop, fill = opinion)) +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(),
         strip.text = element_text(size = 12, face = "bold"))
 
-
+```{r}
 ### Exercise 3 - Comparing proportions across bars
 
 Recreate the same visualisation from the previous exercise, this time dodging the bars for opinion proportions for each region, rather than faceting by region and then improve the legend. How is the story this visualisation telling different than the story the previous plot tells?
