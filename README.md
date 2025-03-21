@@ -22,7 +22,7 @@ In September 2019, YouGov survey asked 1,639 GB adults the following question:
 The data from the survey are in `data/brexit.csv`.
 
 ```{r message = FALSE}
-brexit <- read_csv("data/brexit.csv")
+brexit <- read_csv("C:/Users/Lenovo/Documents/pengantar sains data (psd)/brexit.csv")
 ```
 
 In the course video we made the following visualisation.
