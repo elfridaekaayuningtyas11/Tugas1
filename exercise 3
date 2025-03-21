@@ -1,0 +1,24 @@
+library(tidyverse)
+library(scales)
+
+brexit <- read_csv("C:/Users/Lenovo/Documents/pengantar sains data (psd)/brexit.csv")
+
+brexit_prop <- brexit %>%
+  count(region, opinion) %>%
+  group_by(region) %>%
+  mutate(prop = n / sum(n))
+
+brexit_prop$region <- factor(brexit_prop$region, levels = unique(brexit_prop$region))
+
+ggplot(brexit_prop, aes(x = region, y = prop, fill = opinion)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +  # Bandingkan opini dalam satu region
+  scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +  # Pastikan 0 - 100%
+  scale_fill_manual(values = c("Wrong" = "#ef8a62", "Right" = "#67a9cf", "Don't know" = "gray"),
+                    name = "Opinion", labels = c("Wrong Decision", "Right Decision", "Uncertain")) +
+  labs(title = "Was Britain right/wrong to vote to leave EU?",
+       subtitle = "Proportion of responses per region (YouGov Survey, Sep 2019)",
+       x = "Region", y = "Proportion of Responses") +
+  theme_minimal() +
+  theme(legend.position = "right",  # Pindahkan legenda ke kanan
+        legend.title = element_text(face = "bold"),
+        axis.text.x = element_text(face = "bold", angle = 45, hjust = 1))
