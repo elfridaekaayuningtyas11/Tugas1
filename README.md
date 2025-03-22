@@ -142,7 +142,7 @@ ggplot(brexit_prop, aes(x = region, y = prop, fill = opinion)) +
        subtitle = "Proportion of responses per region (YouGov Survey, Sep 2019)",
        x = "Region", y = "Proportion of Responses") +
   theme_minimal() +
-  theme(legend.position = "right",  # Pindahkan legenda ke kanan
+  theme(legend.position = "right",
         legend.title = element_text(face = "bold"),
         axis.text.x = element_text(face = "bold", angle = 45, hjust = 1))
 ```
