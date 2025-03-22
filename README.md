@@ -59,7 +59,7 @@ In this application exercise we tell different stories with the same data.
 Add `scales = "free_x"` as an argument to the `facet_wrap()` function. How does the visualisation change? How is the story this visualisation telling different than the story the original plot tells?
 
 ```{r}
-#answer
+#code goes here
 library(ggplot2)
 
 brexit <- read_csv("C:/Users/Lenovo/Documents/pengantar sains data (psd)/brexit.csv")
