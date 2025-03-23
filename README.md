@@ -134,8 +134,8 @@ brexit_prop <- brexit %>%
 brexit_prop$region <- factor(brexit_prop$region, levels = unique(brexit_prop$region))
 
 ggplot(brexit_prop, aes(x = region, y = prop, fill = opinion)) +
-  geom_col(position = position_dodge(width = 0.8), width = 0.7) +  # Bandingkan opini dalam satu region
-  scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +  # Pastikan 0 - 100%
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +  
+  scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +  
   scale_fill_manual(values = c("Wrong" = "#ef8a62", "Right" = "#67a9cf", "Don't know" = "gray"),
                     name = "Opinion", labels = c("Wrong Decision", "Right Decision", "Uncertain")) +
   labs(title = "Was Britain right/wrong to vote to leave EU?",
